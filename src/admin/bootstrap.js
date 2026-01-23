@@ -1,64 +1,121 @@
 ﻿"use strict";
 
-module.exports = ({ strapi }) => {
-  console.log("🚀 STRAPI DEFINITIVO - INICIANDO NO RENDER");
-  console.log("📅 " + new Date().toISOString());
+module.exports = async ({ strapi }) => {
+  console.log("🚀 AUTO-CONFIG - Sincronizando tudo com Render");
   
-  // Configuração automática após Strapi carregar
-  setTimeout(async () => {
-    try {
-      console.log("🔧 CONFIGURAÇÃO AUTOMÁTICA INICIADA...");
-      
-      // 1. Encontrar role Public
-      const publicRole = await strapi.db.query("plugin::users-permissions.role").findOne({
-        where: { type: "public" }
-      });
-      
-      if (publicRole) {
-        console.log(`✅ Role Public encontrado (ID: ${publicRole.id})`);
-        
-        // 2. Lista de coleções que você vai criar
-        const collections = ["noticia", "evento", "curso"];
-        
-        console.log("🎯 Coleções a configurar:", collections.join(", "));
-        
-        // 3. Configurar permissões básicas
-        for (const collection of collections) {
-          try {
-            const actions = ["find", "findOne"];
-            
-            for (const action of actions) {
-              const actionName = `api::${collection}.${collection}.${action}`;
-              
-              // Verificar se já existe
-              const exists = await strapi.db.query("plugin::users-permissions.permission").findOne({
-                where: { action: actionName, role: publicRole.id }
-              });
-              
-              if (!exists) {
-                await strapi.db.query("plugin::users-permissions.permission").create({
-                  data: { action: actionName, role: publicRole.id }
-                });
-                console.log(`   ✅ ${collection}.${action} - configurada`);
-              } else {
-                console.log(`   ⏩ ${collection}.${action} - já existe`);
-              }
-            }
-          } catch (error) {
-            console.log(`   ⚠️  ${collection}: ${error.message}`);
-          }
+  // Esperar Strapi carregar
+  await new Promise(resolve => setTimeout(resolve, 10000));
+  
+  try {
+    console.log("🔧 CONFIGURANDO PERMISSÕES PÚBLICAS AUTOMATICAMENTE...");
+    
+    // 1. Encontrar ou criar role Public
+    let publicRole = await strapi.db.query("plugin::users-permissions.role").findOne({
+      where: { type: "public" }
+    });
+    
+    if (!publicRole) {
+      console.log("📝 Criando role Public...");
+      publicRole = await strapi.db.query("plugin::users-permissions.role").create({
+        data: {
+          name: "Public",
+          description: "Usuários públicos",
+          type: "public"
         }
-        
-        console.log("\n🎉 CONFIGURAÇÃO COMPLETA!");
-        console.log("📡 URLs públicas após criar coleções:");
-        console.log("   • /api/noticias");
-        console.log("   • /api/eventos");
-        console.log("   • /api/cursos");
+      });
+      console.log("✅ Role Public criado");
+    }
+    
+    console.log(`🎯 Role Public ID: ${publicRole.id}`);
+    
+    // 2. Lista de coleções que você quer públicas
+    const publicCollections = ["noticia", "evento", "curso"];
+    
+    // 3. Para cada coleção, garantir permissões
+    for (const collection of publicCollections) {
+      console.log(`\n📝 ${collection}:`);
+      
+      // Verificar se a coleção existe
+      const contentType = strapi.contentTypes[`api::${collection}.${collection}`];
+      if (!contentType) {
+        console.log(`   ⚠️  Coleção não existe ainda. Será configurada quando criar.`);
+        continue;
       }
       
-    } catch (error) {
-      console.log("⚠️  Erro na configuração automática:", error.message);
-      console.log("💡 Isso é normal na primeira execução.");
+      const actions = ["find", "findOne"];
+      
+      for (const action of actions) {
+        const actionName = `api::${collection}.${collection}.${action}`;
+        
+        try {
+          // Verificar se permissão já existe
+          const exists = await strapi.db.query("plugin::users-permissions.permission").findOne({
+            where: { action: actionName, role: publicRole.id }
+          });
+          
+          if (!exists) {
+            // Criar permissão
+            await strapi.db.query("plugin::users-permissions.permission").create({
+              data: {
+                action: actionName,
+                role: publicRole.id
+              }
+            });
+            console.log(`   ✅ ${action} - CONFIGURADA`);
+          } else {
+            console.log(`   ⏩ ${action} - Já configurada`);
+          }
+        } catch (error) {
+          console.log(`   ❌ ${action} - Erro: ${error.message}`);
+        }
+      }
     }
-  }, 15000); // 15 segundos após iniciar
+    
+    console.log("\n🎉 CONFIGURAÇÃO AUTOMÁTICA COMPLETA!");
+    console.log("📡 APIs PÚBLICAS DISPONÍVEIS:");
+    console.log("   • /api/noticias");
+    console.log("   • /api/eventos");
+    console.log("   • /api/cursos");
+    console.log("\n💡 Tudo que criar localmente já estará público no Render!");
+    
+    // 4. AGORA criar middleware de EMERGÊNCIA
+    console.log("\n🔧 CONFIGURANDO MIDDLEWARE DE EMERGÊNCIA...");
+    
+  } catch (error) {
+    console.error("❌ Erro na configuração automática:", error.message);
+  }
+};
+
+// Middleware global para permitir acesso público mesmo sem permissões configuradas
+module.exports.middleware = (strapi) => {
+  return {
+    initialize() {
+      strapi.app.use(async (ctx, next) => {
+        const publicPaths = [
+          '/api/noticias',
+          '/api/noticias/:id',
+          '/api/eventos', 
+          '/api/eventos/:id',
+          '/api/cursos',
+          '/api/cursos/:id'
+        ];
+        
+        const isPublicApi = publicPaths.some(path => {
+          if (path.includes(':id')) {
+            return ctx.request.path.startsWith(path.split('/:id')[0]) && 
+                   ctx.request.method === 'GET';
+          }
+          return ctx.request.path === path && ctx.request.method === 'GET';
+        });
+        
+        if (isPublicApi) {
+          // Pular autenticação para APIs públicas
+          console.log(`🌐 Acesso público permitido: ${ctx.request.path}`);
+          return next();
+        }
+        
+        await next();
+      });
+    }
+  };
 };

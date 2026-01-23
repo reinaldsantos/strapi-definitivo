@@ -2,7 +2,8 @@
 module.exports = [
   'strapi::errors',
   {
-    name: 'strapi::security',
+    name: 'global::emergency-public',
+  'strapi::security',
     config: {
       contentSecurityPolicy: {
         useDefaults: true,
@@ -48,3 +49,4 @@ module.exports = [
   'strapi::favicon',
   'strapi::public',
 ];
+
