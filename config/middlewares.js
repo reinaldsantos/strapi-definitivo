@@ -1,4 +1,4 @@
-﻿module.exports = [
+module.exports = [
   'strapi::errors',
   'strapi::security',
   'strapi::cors',
