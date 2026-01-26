@@ -1,0 +1,41 @@
+{
+    "attributes": {
+        "descricao": {
+            "type": "richtext"
+        },
+        "aruivo_pdf": {
+            "allowedTypes": [
+                "files"
+            ],
+            "required": true,
+            "type": "media",
+            "multiple": false
+        },
+        "data_publicacao": {
+            "type": "date"
+        },
+        "versao": {
+            "type": "string"
+        },
+        "ativo": {
+            "default": true,
+            "type": "boolean"
+        },
+        "titulo": {
+            "type": "string",
+            "required": true
+        }
+    },
+    "pluginOptions": {},
+    "kind": "collectionType",
+    "collectionName": "relatorio_verificacao_eqavet",
+    "options": {
+        "draftAndPublish": true
+    },
+    "info": {
+        "pluralName": "relatorio-verificacao-eqavets",
+        "description": "",
+        "displayName": "Relatorio Verificacao Eqavet",
+        "singularName": "relatorio-verificacao-eqavet"
+    }
+}
