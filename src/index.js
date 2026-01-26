@@ -1,23 +1,20 @@
-﻿"use strict";
-
-// Debug inicial
-console.log("🔍 DEBUG: Strapi iniciando...");
-console.log("📅 " + new Date().toISOString());
-console.log("🌍 NODE_ENV:", process.env.NODE_ENV);
-console.log("🔗 DATABASE_URL presente?", !!process.env.DATABASE_URL);
-
-// Capturar todos os erros não tratados
-process.on('uncaughtException', (error) => {
-  console.error("💥 ERRO NÃO TRATADO:", error.message);
-  console.error(error.stack);
-});
-
-process.on('unhandledRejection', (reason, promise) => {
-  console.error("💥 PROMISE REJEITADA:", reason);
-});
-
-module.exports = {
-  bootstrap() {
-    console.log("✅ Bootstrap executado");
-  },
+"use strict";
+// import type { Core } from '@strapi/strapi';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = {
+    /**
+     * An asynchronous register function that runs before
+     * your application is initialized.
+     *
+     * This gives you an opportunity to extend code.
+     */
+    register( /* { strapi }: { strapi: Core.Strapi } */) { },
+    /**
+     * An asynchronous bootstrap function that runs before
+     * your application gets started.
+     *
+     * This gives you an opportunity to set up your data model,
+     * run jobs, or perform some special logic.
+     */
+    bootstrap( /* { strapi }: { strapi: Core.Strapi } */) { },
 };
