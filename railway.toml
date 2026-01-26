@@ -1,0 +1,25 @@
+﻿[build]
+builder = "nixpacks"
+  
+[deploy]
+startCommand = "npm start"
+
+[[services]]
+name = "strapi"
+port = 1338  # SUA PORTA
+
+[variables]
+NODE_ENV = "production"
+PORT = "1338"  # SUA PORTA
+HOST = "0.0.0.0"
+DATABASE_CLIENT = "postgres"
+DATABASE_URL = "postgresql://meu_admin:QUm94o4oPL9x6bhGCX4B4zIGxwZeRRIF@dpg-d5kgas94tr6s73au58pg-a.oregon-postgres.render.com/strapi_5cj5"
+JWT_SECRET = "u9uG84EttjwfAkJWE2HpLAIiSSBVtwjPR8J7L3Q6YiU"
+ADMIN_JWT_SECRET = "YQLhTPptnqOphGFqJAcoIiKHYJV3s+HIMPqzZ7R35OQ"
+APP_KEYS = "J/PjkO7B2QBUSyeo14eRF2/pbUjJ4K1awxEx8UPAoxU=,ArfDkkBtc2Wysc5jY8sK6KX1S0jiWzI32gFCNHDfsSQ=,pvpEwItd6bzA4K+CPPi/uP99gN4HSQ3AVd43SJF8bjg=,XEr5t2QLfRrSElqq24QApwklGojpB1auPvO3up4LUi0="
+API_TOKEN_SALT = "l9GtiZEFgB+49p5UlhIeJbGt0TVk+lMuEa/1epYoc1I"
+TRANSFER_TOKEN_SALT = "rEH6wau0OYWA4eh1k5iajeaIryXbVcNPXrzkcEGmxRs"
+CORS_ORIGIN = "https://site-escola-five-sand.vercel.app,http://localhost:3000,http://localhost:3001"
+DEBUG = "strapi:*"
+STRAPI_LOG_LEVEL = "debug"
+PUBLIC_URL = "https://strapi-definitivo.onrender.com"  # Será atualizado pela Railway
