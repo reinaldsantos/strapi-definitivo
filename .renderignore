@@ -1,0 +1,9 @@
+﻿# Render ignore file
+node_modules/
+.git/
+.tmp/
+.cache/
+dist/  # O Render vai construir seu próprio dist
+uploads/
+src/admin/
+src/extensions/
