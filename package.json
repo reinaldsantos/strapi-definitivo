@@ -38,7 +38,6 @@
                    "installId":  "552079cc635f07d9f9746ab5a49b46597bcdc5f67eba718bbd42d32ab24e7303"
                },
     "engines":  {
-                    "node":  "\u003e=20.0.0",
-                    "npm":  "\u003e=9.0.0"
+                    "node":  "\u003e=18.0.0"
                 }
 }
