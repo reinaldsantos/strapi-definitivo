@@ -7,11 +7,13 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "render-start": "npm run build && npm start"
   },
   "dependencies": {
     "@strapi/strapi": "5.33.4",
     "@strapi/plugin-users-permissions": "5.33.4",
+    "@strapi/plugin-cloud": "5.33.4",
     "pg": "^8.11.3"
   },
   "engines": {
