@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 module.exports = async ({ strapi }) => {
   console.log("🚀 AUTO-CONFIG - Sincronizando tudo com Render");

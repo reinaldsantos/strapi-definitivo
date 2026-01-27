@@ -1,4 +1,4 @@
-﻿// middleware/emergency-public.js
+// middleware/emergency-public.js
 // Permite acesso público mesmo sem permissões configuradas
 
 module.exports = (config, { strapi }) => {

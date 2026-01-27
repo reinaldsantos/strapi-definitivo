@@ -1,4 +1,4 @@
-﻿// config/bootstrap.js - APENAS para log
+// config/bootstrap.js - APENAS para log
 'use strict';
 
 module.exports = async () => {

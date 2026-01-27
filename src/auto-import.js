@@ -1,4 +1,4 @@
-﻿// src/auto-import.js - Executa import automaticamente
+// src/auto-import.js - Executa import automaticamente
 const fs = require('fs');
 const { execSync } = require('child_process');
 
