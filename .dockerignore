@@ -1,11 +1,7 @@
 ﻿node_modules
 npm-debug.log
-build
-dist
-.tmp
-.cache
+.DS_Store
 .git
-.env.local
-.env.development
-.env.test
-coverage
+.env
+.env.docker
+README.md
