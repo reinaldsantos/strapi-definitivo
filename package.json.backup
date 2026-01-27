@@ -1,4 +1,4 @@
-﻿{
+{
     "name":  "strapi-definitivo",
     "private":  true,
     "version":  "0.1.0",
@@ -8,7 +8,6 @@
                     "start":  "strapi start",
                     "build":  "strapi build",
                     "strapi":  "strapi"
-                    "render-start": "npm run build && npm run start"
                 },
     "dependencies":  {
                          "@strapi/strapi":  "5.33.4",

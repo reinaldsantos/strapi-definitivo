@@ -1,0 +1,15 @@
+﻿version: '3.8'
+services:
+  strapi:
+    build: .
+    container_name: strapi_epf
+    restart: unless-stopped
+    ports:
+      - "1337:1337"
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: sqlite
+      DATABASE_FILENAME: /app/.tmp/data.db
+    volumes:
+      - ./public/uploads:/app/public/uploads
+      - ./.tmp:/app/.tmp
