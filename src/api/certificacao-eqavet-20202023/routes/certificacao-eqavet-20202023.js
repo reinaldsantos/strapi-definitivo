@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 module.exports = {
   routes: [
@@ -7,18 +7,16 @@ module.exports = {
       path: '/certificacao-eqavet-20202023s',
       handler: 'certificacao-eqavet-20202023.find',
       config: {
-        policies: [],
-        middlewares: [],
-      },
+        policies: []
+      }
     },
     {
       method: 'GET',
       path: '/certificacao-eqavet-20202023s/:id',
       handler: 'certificacao-eqavet-20202023.findOne',
       config: {
-        policies: [],
-        middlewares: [],
-      },
-    },
-  ],
+        policies: []
+      }
+    }
+  ]
 };

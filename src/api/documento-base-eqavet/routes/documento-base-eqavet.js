@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 module.exports = {
   routes: [
@@ -7,18 +7,16 @@ module.exports = {
       path: '/documento-base-eqavets',
       handler: 'documento-base-eqavet.find',
       config: {
-        policies: [],
-        middlewares: [],
-      },
+        policies: []
+      }
     },
     {
       method: 'GET',
       path: '/documento-base-eqavets/:id',
       handler: 'documento-base-eqavet.findOne',
       config: {
-        policies: [],
-        middlewares: [],
-      },
-    },
-  ],
+        policies: []
+      }
+    }
+  ]
 };

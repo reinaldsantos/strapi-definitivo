@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 module.exports = {
   routes: [
@@ -7,18 +7,16 @@ module.exports = {
       path: '/politica-privacidades',
       handler: 'politica-privacidade.find',
       config: {
-        policies: [],
-        middlewares: [],
-      },
+        policies: []
+      }
     },
     {
       method: 'GET',
       path: '/politica-privacidades/:id',
       handler: 'politica-privacidade.findOne',
       config: {
-        policies: [],
-        middlewares: [],
-      },
-    },
-  ],
+        policies: []
+      }
+    }
+  ]
 };

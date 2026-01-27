@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 module.exports = {
   routes: [
@@ -7,18 +7,16 @@ module.exports = {
       path: '/relatorios-acompanhamento-eqavets',
       handler: 'relatorios-acompanhamento-eqavet.find',
       config: {
-        policies: [],
-        middlewares: [],
-      },
+        policies: []
+      }
     },
     {
       method: 'GET',
       path: '/relatorios-acompanhamento-eqavets/:id',
       handler: 'relatorios-acompanhamento-eqavet.findOne',
       config: {
-        policies: [],
-        middlewares: [],
-      },
-    },
-  ],
+        policies: []
+      }
+    }
+  ]
 };

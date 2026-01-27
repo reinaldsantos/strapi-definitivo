@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 module.exports = {
   routes: [
@@ -7,18 +7,16 @@ module.exports = {
       path: '/manual-processos-eqavets',
       handler: 'manual-processos-eqavet.find',
       config: {
-        policies: [],
-        middlewares: [],
-      },
+        policies: []
+      }
     },
     {
       method: 'GET',
       path: '/manual-processos-eqavets/:id',
       handler: 'manual-processos-eqavet.findOne',
       config: {
-        policies: [],
-        middlewares: [],
-      },
-    },
-  ],
+        policies: []
+      }
+    }
+  ]
 };

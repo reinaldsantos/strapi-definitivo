@@ -1,43 +1,38 @@
-{
-    "attributes":  {
-                       "descricao":  {
-                                         "type":  "richtext"
-                                     },
-                       "aruivo_pdf":  {
-                                          "allowedTypes":  [
-                                                               "files"
-                                                           ],
-                                          "required":  true,
-                                          "type":  "media",
-                                          "multiple":  false
-                                      },
-                       "data_publicacao":  {
-                                               "type":  "date"
-                                           },
-                       "versao":  {
-                                      "type":  "string"
-                                  },
-                       "ativo":  {
-                                     "default":  true,
-                                     "type":  "boolean"
-                                 },
-                       "titulo":  {
-                                      "type":  "string",
-                                      "required":  true
-                                  }
-                   },
-    "pluginOptions":  {
-
-                      },
-    "kind":  "collectionType",
-    "collectionName":  "relatorio_operador_eqavet",
-    "options":  {
-                    "draftAndPublish":  true
-                },
-    "info":  {
-                 "pluralName":  "relatorio-operador-eqavets",
-                 "description":  "",
-                 "displayName":  "Relatorio Operador Eqavet",
-                 "singularName":  "relatorio-operador-eqavet"
-             }
+﻿{
+  "kind": "collectionType",
+  "collectionName": "relatorio_operador_eqavets",
+  "info": {
+    "singularName": "relatorio-operador-eqavet",
+    "pluralName": "relatorio-operador-eqavets",
+    "displayName": "RELATORIO OPERADOR EQAVET"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "aruivo_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "data_publicacao": {
+      "type": "date"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "versao": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
 }

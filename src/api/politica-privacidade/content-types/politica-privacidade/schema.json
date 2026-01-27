@@ -1,11 +1,10 @@
-{
+﻿{
   "kind": "collectionType",
-  "collectionName": "politicas_privacidade",
+  "collectionName": "politica_privacidades",
   "info": {
     "singularName": "politica-privacidade",
-    "pluralName": "politicas-privacidade",
-    "displayName": "Politica Privacidade",
-    "description": ""
+    "pluralName": "politica-privacidades",
+    "displayName": "POLITICA PRIVACIDADE"
   },
   "options": {
     "draftAndPublish": true

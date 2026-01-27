@@ -1,43 +1,38 @@
-{
-    "attributes":  {
-                       "descricao":  {
-                                         "type":  "richtext"
-                                     },
-                       "aruivo_pdf":  {
-                                          "allowedTypes":  [
-                                                               "files"
-                                                           ],
-                                          "required":  true,
-                                          "type":  "media",
-                                          "multiple":  false
-                                      },
-                       "data_publicacao":  {
-                                               "type":  "date"
-                                           },
-                       "versao":  {
-                                      "type":  "string"
-                                  },
-                       "ativo":  {
-                                     "default":  true,
-                                     "type":  "boolean"
-                                 },
-                       "titulo":  {
-                                      "type":  "string",
-                                      "required":  true
-                                  }
-                   },
-    "pluginOptions":  {
-
-                      },
-    "kind":  "collectionType",
-    "collectionName":  "documento_base_eqavet",
-    "options":  {
-                    "draftAndPublish":  true
-                },
-    "info":  {
-                 "pluralName":  "documento-base-eqavets",
-                 "description":  "",
-                 "displayName":  "Documento Base Eqavet",
-                 "singularName":  "documento-base-eqavet"
-             }
+﻿{
+  "kind": "collectionType",
+  "collectionName": "documento_base_eqavets",
+  "info": {
+    "singularName": "documento-base-eqavet",
+    "pluralName": "documento-base-eqavets",
+    "displayName": "DOCUMENTO BASE EQAVET"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "aruivo_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "data_publicacao": {
+      "type": "date"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "versao": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
 }

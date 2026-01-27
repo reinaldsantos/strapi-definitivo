@@ -1,43 +1,38 @@
-{
-    "attributes":  {
-                       "descricao":  {
-                                         "type":  "richtext"
-                                     },
-                       "aruivo_pdf":  {
-                                          "allowedTypes":  [
-                                                               "files"
-                                                           ],
-                                          "required":  true,
-                                          "type":  "media",
-                                          "multiple":  false
-                                      },
-                       "data_publicacao":  {
-                                               "type":  "date"
-                                           },
-                       "versao":  {
-                                      "type":  "string"
-                                  },
-                       "ativo":  {
-                                     "default":  true,
-                                     "type":  "boolean"
-                                 },
-                       "titulo":  {
-                                      "type":  "string",
-                                      "required":  true
-                                  }
-                   },
-    "pluginOptions":  {
-
-                      },
-    "kind":  "collectionType",
-    "collectionName":  "regulamento_interno",
-    "options":  {
-                    "draftAndPublish":  true
-                },
-    "info":  {
-                 "pluralName":  "regulamento-internos",
-                 "description":  "",
-                 "displayName":  "Regulamento Interno",
-                 "singularName":  "regulamento-interno"
-             }
+﻿{
+  "kind": "collectionType",
+  "collectionName": "regulamento_internos",
+  "info": {
+    "singularName": "regulamento-interno",
+    "pluralName": "regulamento-internos",
+    "displayName": "REGULAMENTO INTERNO"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "aruivo_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "data_publicacao": {
+      "type": "date"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "versao": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
 }

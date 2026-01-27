@@ -1,43 +1,38 @@
-{
-    "attributes":  {
-                       "descricao":  {
-                                         "type":  "richtext"
-                                     },
-                       "aruivo_pdf":  {
-                                          "allowedTypes":  [
-                                                               "files"
-                                                           ],
-                                          "required":  true,
-                                          "type":  "media",
-                                          "multiple":  false
-                                      },
-                       "data_publicacao":  {
-                                               "type":  "date"
-                                           },
-                       "versao":  {
-                                      "type":  "string"
-                                  },
-                       "ativo":  {
-                                     "default":  true,
-                                     "type":  "boolean"
-                                 },
-                       "titulo":  {
-                                      "type":  "string",
-                                      "required":  true
-                                  }
-                   },
-    "pluginOptions":  {
-
-                      },
-    "kind":  "collectionType",
-    "collectionName":  "selo_conformidade_eqavet",
-    "options":  {
-                    "draftAndPublish":  true
-                },
-    "info":  {
-                 "pluralName":  "selo-conformidade-eqavets",
-                 "description":  "",
-                 "displayName":  "Selo Conformidade Eqavet",
-                 "singularName":  "selo-conformidade-eqavet"
-             }
+﻿{
+  "kind": "collectionType",
+  "collectionName": "selo_conformidade_eqavets",
+  "info": {
+    "singularName": "selo-conformidade-eqavet",
+    "pluralName": "selo-conformidade-eqavets",
+    "displayName": "SELO CONFORMIDADE EQAVET"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "aruivo_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "data_publicacao": {
+      "type": "date"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "versao": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
 }

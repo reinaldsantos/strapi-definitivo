@@ -1,43 +1,38 @@
-{
-    "attributes":  {
-                       "descricao":  {
-                                         "type":  "richtext"
-                                     },
-                       "aruivo_pdf":  {
-                                          "allowedTypes":  [
-                                                               "files"
-                                                           ],
-                                          "required":  true,
-                                          "type":  "media",
-                                          "multiple":  false
-                                      },
-                       "data_publicacao":  {
-                                               "type":  "date"
-                                           },
-                       "versao":  {
-                                      "type":  "string"
-                                  },
-                       "ativo":  {
-                                     "default":  true,
-                                     "type":  "boolean"
-                                 },
-                       "titulo":  {
-                                      "type":  "string",
-                                      "required":  true
-                                  }
-                   },
-    "pluginOptions":  {
-
-                      },
-    "kind":  "collectionType",
-    "collectionName":  "certificacao_eqavet_20202023",
-    "options":  {
-                    "draftAndPublish":  true
-                },
-    "info":  {
-                 "pluralName":  "certificacao-eqavet-20202023s",
-                 "description":  "",
-                 "displayName":  "Certificacao Eqavet 20202023",
-                 "singularName":  "certificacao-eqavet-20202023"
-             }
+﻿{
+  "kind": "collectionType",
+  "collectionName": "certificacao_eqavet_20202023s",
+  "info": {
+    "singularName": "certificacao-eqavet-20202023",
+    "pluralName": "certificacao-eqavet-20202023s",
+    "displayName": "CERTIFICACAO EQAVET 20202023"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "aruivo_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "data_publicacao": {
+      "type": "date"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "versao": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    }
+  }
 }
