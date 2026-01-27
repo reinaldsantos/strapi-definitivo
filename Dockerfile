@@ -1,29 +1,23 @@
-﻿# Dockerfile para Strapi no Render
-FROM node:18-alpine
-
+﻿FROM node:18-alpine
 WORKDIR /app
 
-# Instalar dependências necessárias para SQLite
-RUN apk add --no-cache python3 make g++ sqlite
+# Instalar dependências para PostgreSQL
+RUN apk add --no-cache python3 make g++
 
-# Copiar package.json primeiro (cache otimizado)
+# Copiar package.json
 COPY package*.json ./
 
-# Instalar dependências de produção
+# Instalar dependências
 RUN npm ci --only=production
 
-# Copiar o resto do código
+# Copiar tudo
 COPY . .
 
 # Build do Strapi
 RUN npm run build
 
-# Expor porta
-EXPOSE 3000
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=30s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/_health || exit 1
+# Porta correta do Strapi
+EXPOSE 1337
 
 # Comando de inicialização
 CMD ["npm", "start"]
