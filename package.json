@@ -1,31 +1,31 @@
-{
-    "name": "strapi-definitivo",
-    "private": true,
-    "version": "0.1.0",
-    "description": "A Strapi application",
-    "scripts": {
-        "develop": "strapi develop",
-        "start": "strapi start",
-        "build": "strapi build",
-        "strapi": "strapi",
-        "clean": "rm -rf .cache && rm -rf build"
-    },
-    "dependencies": {
-        "@strapi/plugin-cloud": "5.33.4",
-        "@strapi/plugin-users-permissions": "5.33.4",
-        "@strapi/strapi": "5.33.4",
-        "better-sqlite3": "12.4.1",
-        "react": "^18.0.0",
-        "react-dom": "^18.0.0",
-        "react-router-dom": "^6.0.0",
-        "styled-components": "^6.0.0"
-    },
-    "devDependencies": {
-        "esbuild": "^0.20.0",
-        "typescript": "5.3.3"
-    },
-    "engines": {
-        "node": ">=18.0.0 <=20.x.x",
-        "npm": ">=6.0.0"
-    }
+﻿{
+    "name":  "strapi-definitivo",
+    "private":  true,
+    "version":  "0.1.0",
+    "description":  "A Strapi application",
+    "scripts":  {
+                    "develop":  "strapi develop",
+                    "start":  "node server.js",
+                    "build":  "strapi build",
+                    "strapi":  "strapi",
+                    "clean":  "rm -rf .cache \u0026\u0026 rm -rf build"
+                },
+    "dependencies":  {
+                         "@strapi/plugin-cloud":  "5.33.4",
+                         "@strapi/plugin-users-permissions":  "5.33.4",
+                         "@strapi/strapi":  "5.33.4",
+                         "better-sqlite3":  "12.4.1",
+                         "react":  "^18.0.0",
+                         "react-dom":  "^18.0.0",
+                         "react-router-dom":  "^6.0.0",
+                         "styled-components":  "^6.0.0"
+                     },
+    "devDependencies":  {
+                            "esbuild":  "^0.20.0",
+                            "typescript":  "5.3.3"
+                        },
+    "engines":  {
+                    "node":  "\u003e=18.0.0 \u003c=20.x.x",
+                    "npm":  "\u003e=6.0.0"
+                }
 }
