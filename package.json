@@ -1,28 +1,29 @@
 {
-    "name":  "strapi-definitivo",
-    "private":  true,
-    "version":  "0.1.0",
-    "description":  "A Strapi application",
-    "scripts":  {
-                    "develop":  "strapi develop",
-                    "start":  "node server.js",
-                    "build":  "strapi build",
-                    "strapi":  "strapi",
-                    "render-start":  "node start.js"
-                },
-    "dependencies":  {
-                         "@strapi/strapi":  "5.33.4",
-                         "@strapi/plugin-users-permissions":  "5.33.4",
-                         "@strapi/plugin-cloud":  "5.33.4",
-                         "pg":  "^8.11.3",
-                         "esbuild":  "^0.24.0",
-                         "react":  "^18.0.0",
-                         "react-dom":  "^18.0.0",
-                         "react-router-dom":  "^6.0.0",
-                         "styled-components":  "^6.0.0"
-                     },
-    "engines":  {
-                    "node":  "\u003e=20.0.0",
-                    "npm":  "\u003e=6.0.0"
-                }
+  "name": "strapi-definitivo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "node start-final.js",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "render-start": "node start-final.js"
+  },
+  "dependencies": {
+    "@strapi/strapi": "5.33.4",
+    "@strapi/plugin-users-permissions": "5.33.4",
+    "@strapi/plugin-cloud": "5.33.4",
+    "pg": "^8.11.3",
+    "esbuild": "^0.24.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0",
+    "sharp": "^0.33.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=6.0.0"
+  }
 }
