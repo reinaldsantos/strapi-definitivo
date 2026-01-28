@@ -8,7 +8,7 @@
                     "start":  "strapi start",
                     "build":  "strapi build",
                     "strapi":  "strapi",
-                    "render-start":  "npm start"
+                    "render-start":  "bash start.sh"
                 },
     "dependencies":  {
                          "@strapi/strapi":  "5.33.4",
