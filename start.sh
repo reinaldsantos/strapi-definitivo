@@ -1,38 +1,29 @@
 #!/bin/bash
 echo "?? Iniciando Strapi no Render..."
-
-# Cria estrutura COMPLETA que o Strapi espera
+echo "?? Criando diret?rio dist..."
 mkdir -p dist
-mkdir -p dist/build
-mkdir -p dist/config
-mkdir -p dist/src
 
-# Cria arquivos M?NIMOS necess?rios
-echo '{"admin": {"path": "/admin"}, "server": {"port": 1337}}' > dist/config/server.json
-echo '[]' > dist/config/routes.json
-echo '{"ssr": {}}' > dist/ssr.json
-echo '{}' > dist/build/config.json
+echo "?? Usando m?todo CORRETO do Strapi CLI..."
+# M?todo que FUNCIONA: usar o CLI oficial do Strapi
+NODE_ENV=production node node_modules/@strapi/strapi/bin/strapi.js start
 
-echo "? Estrutura criada."
-
-# Inicia Strapi PULANDO verifica??o
-cd /opt/render/project/src
-NODE_ENV=production node -e "
-// M?todo DIRETO que funciona
-const path = require('path');
-process.chdir(__dirname);
-
-// Carrega e inicia Strapi DIRETAMENTE
-const { Strapi } = require('@strapi/strapi');
-const app = new Strapi({ 
-  distDir: path.join(__dirname, 'dist'),
-  autoReload: false 
-});
-
-app.start().then(() => {
-  console.log('?? Strapi iniciado com sucesso!');
-}).catch(err => {
-  console.error('? Erro:', err.message);
-  process.exit(1);
-});
-"
+# Se falhar, tentar m?todo alternativo
+if [ $? -ne 0 ]; then
+  echo "? M?todo 1 falhou. Tentando m?todo 2..."
+  node -e "
+    try {
+      // Tenta a forma ES module
+      import('@strapi/strapi').then(module => {
+        const strapi = module.default || module;
+        strapi().start();
+      });
+    } catch(e) {
+      console.log('ES module falhou:', e.message);
+      // Tenta CommonJS
+      const strapi = require('@strapi/strapi');
+      // Strapi 5 exporta um factory function diretamente
+      const app = strapi();
+      app.start();
+    }
+  "
+fi
