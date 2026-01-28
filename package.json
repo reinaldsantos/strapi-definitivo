@@ -10,10 +10,18 @@
     "postinstall": "npm rebuild @swc/core"
   },
   "dependencies": {
-    // SUAS DEPENDÊNCIAS ATUAIS AQUI - NÃO APAGUE
+    "@strapi/strapi": "4.24.2",
+    "@strapi/plugin-users-permissions": "4.24.2",
+    "@strapi/plugin-i18n": "4.24.2",
+    "@strapi/provider-upload-cloudinary": "4.24.2",
+    "pg": "^8.11.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
-    // SEUS DEV DEPENDENCIES AQUI
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
