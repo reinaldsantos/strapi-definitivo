@@ -1,6 +1,4 @@
 #!/bin/bash
-# Cria diret?rio dist
+echo "?? Iniciando Strapi no Render..."
 mkdir -p dist
-
-# Inicia Strapi com op??o --no-build
-NODE_ENV=production node node_modules/@strapi/strapi/bin/strapi.js start --no-build
+NODE_ENV=production node node_modules/.bin/strapi start
