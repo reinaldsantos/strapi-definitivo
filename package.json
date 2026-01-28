@@ -5,10 +5,10 @@
     "description":  "A Strapi application",
     "scripts":  {
                     "develop":  "strapi develop",
-                    "start":  "strapi start",
+                    "start":  "node start.js",
                     "build":  "strapi build",
                     "strapi":  "strapi",
-                    "render-start":  "bash start.sh"
+                    "render-start":  "node start.js"
                 },
     "dependencies":  {
                          "@strapi/strapi":  "5.33.4",
