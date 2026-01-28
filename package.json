@@ -5,7 +5,7 @@
     "description":  "A Strapi application",
     "scripts":  {
                     "develop":  "strapi develop",
-                    "start":  "node start.js",
+                    "start":  "node -e \"const strapi = require(\u0027@strapi/strapi\u0027); const app = strapi.default({ distDir: \u0027./dist\u0027 }); app.start();\"",
                     "build":  "strapi build",
                     "strapi":  "strapi",
                     "render-start":  "node start.js"
