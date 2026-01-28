@@ -9,18 +9,19 @@
     "develop": "strapi develop"
   },
   "dependencies": {
-    "@strapi/strapi": "4.24.2",
-    "@strapi/plugin-users-permissions": "4.24.2",
     "@strapi/plugin-i18n": "4.24.2",
+    "@strapi/plugin-users-permissions": "4.24.2",
     "@strapi/provider-upload-cloudinary": "4.24.2",
+    "@strapi/strapi": "4.24.2",
+    "ajv": "8.12.0",
     "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
-    "styled-components": "^6.1.1",
-    "ajv": "8.12.0"
+    "styled-components": "^6.1.1"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
     "typescript": "^5.3.3"
   },
   "engines": {
