@@ -7,19 +7,22 @@
     "build": "strapi build",
     "start": "strapi start",
     "develop": "strapi develop",
-    "postinstall": "npm rebuild @swc/core"
+    "postinstall": "npm rebuild @swc/core --force"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.24.2",
-    "@strapi/plugin-users-permissions": "4.24.2",
-    "@strapi/provider-upload-cloudinary": "4.24.2",
     "@strapi/strapi": "4.24.2",
-    "ajv": "^8.12.0",
+    "@strapi/plugin-users-permissions": "4.24.2",
+    "@strapi/plugin-i18n": "4.24.2",
+    "@strapi/provider-upload-cloudinary": "4.24.2",
     "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.1",
-    "styled-components": "^6.1.1"
+    "react-router-dom": "^5.3.4",
+    "styled-components": "^6.1.1",
+    "@swc/core": "1.6.8",
+    "@swc/core-linux-x64-gnu": "1.6.8",
+    "ajv": "8.12.0",
+    "ajv-draft-04": "2.1.0"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
