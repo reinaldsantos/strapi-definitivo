@@ -10,10 +10,11 @@
     "postinstall": "npm rebuild @swc/core"
   },
   "dependencies": {
-    "@strapi/strapi": "4.24.2",
-    "@strapi/plugin-users-permissions": "4.24.2",
     "@strapi/plugin-i18n": "4.24.2",
+    "@strapi/plugin-users-permissions": "4.24.2",
     "@strapi/provider-upload-cloudinary": "4.24.2",
+    "@strapi/strapi": "4.24.2",
+    "ajv": "^8.12.0",
     "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
